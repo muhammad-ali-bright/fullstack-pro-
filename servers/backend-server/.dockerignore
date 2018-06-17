@@ -1,0 +1,7 @@
+*
+!dist/
+!*.js
+!.zenrc.json
+!package.json
+!knexfile.ts
+!.npmrc

@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": false,
+    "rootDirs": ["./src","../knexfile.ts"],
+    "outDir": "./dist"
+  },
+  "include": [
+    "../../typings/*.d.ts",
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "reportFiles": [
+      "../../typings/*.d.ts",
+      "**/*.ts",
+      "**/*.tsx"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+    "dist",
+    "webpack.config.js"
+  ]
+}

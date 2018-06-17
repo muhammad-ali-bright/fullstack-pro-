@@ -1,0 +1,37 @@
+""" Database counter """
+type Counter {
+  """ Current amount """
+  amount: Int!
+}
+
+extend type Query {
+  """ Counter """
+  counter: Counter
+
+  """ Counter from Datasource """
+  counterCache: Counter
+
+  """ Moleculer Counter """
+  moleculerCounter: Counter
+}
+
+extend type Mutation {
+  """ Increase counter value returns current counter amount """
+  addCounter(
+    """ Amount to add to counter """
+    amount: Int
+  ): Counter
+
+  """ sync cached counter with current value """
+  syncCachedCounter: Boolean
+
+  """ add Counter """
+  addMoleculerCounter(amount: Int): Counter
+}
+
+extend type Subscription {
+  """ Subscription fired when anyone increases counter """
+  counterUpdated: Counter
+
+  moleculerCounterUpdate: Counter
+}

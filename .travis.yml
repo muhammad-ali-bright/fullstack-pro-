@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "8.4"
+install:
+  - npm config set spin=false
+  - yarn install -g npm@5.2
+  - yarn install -g coveralls
+  - yarn install
+os:
+  - linux
+  - osx
+branches:
+  only:
+  - publish
+script:
+  - yarn test
+# Allow Travis tests to run in containers.
+sudo: false
